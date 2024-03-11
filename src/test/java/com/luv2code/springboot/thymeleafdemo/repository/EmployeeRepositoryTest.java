@@ -14,7 +14,6 @@ import org.springframework.context.annotation.Configuration;
 @DataJpaTest
 @AutoConfigureTestDatabase(connection = EmbeddedDatabaseConnection.H2)
 public class EmployeeRepositoryTest {
-
     @Autowired
     private EmployeeRepository employeeRepository;
 
@@ -26,11 +25,9 @@ public class EmployeeRepositoryTest {
     public void EmployeeRepository_SaveAll_ReturnSavedEmployees(){
 
         // Arrange
-        Employee employee = new Employee("gamze","yilmaz","gamze@gmail.com");
-
+        Employee employee = new Employee("jessica","palmer","jessica@gmail.com");
         // Act
         Employee saveEmployee = employeeRepository.save(employee);
-
         // Assert
         Assertions.assertEquals(new Employee(),saveEmployee);
     }
